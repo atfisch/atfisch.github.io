@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> How to build an image grid dynamically with JavaScript?</title>
+<style>
+#imagegrid {
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+}
+.img {
+	height: 500px;
+	width: 500px;
+}
+</style>
+</head>
+<body>
+		<h1> Image grid page with images stored in JS array </h1>
+	<div id="imagegrid"></div>
 
+<script>
+let imgArray = [
+"ambika-green.png",
+];
+
+let container = document.querySelector('#imagegrid');
+for(var i = 0; i < imgArray.length; i++) {
+	let img = document.createElement('img');
+	img.className = 'img';
+	img.src = "Pictures/" + imgArray[i];
+	container.appendChild(img);
+}
+</script>
+</body>
+</html>
